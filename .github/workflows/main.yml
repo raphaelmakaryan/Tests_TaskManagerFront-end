@@ -13,6 +13,6 @@ jobs:
       - name: Installation des npm
         run: npm install
       - name: Installation de playwright pour préparer les tests
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps --project chromium
       - name: Lancement des test
-        run: npm run test:e2e
+        run: npx playwright test --project chromium
