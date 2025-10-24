@@ -1,12 +1,22 @@
-<script setup>
-    import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-    <main>
-        <h1>Task Manager</h1>
-        <HelloWorld/>
-    </main>
+    <div id="app">
+        <router-view />
+    </div>
 </template>
 
-<style scoped></style>
+<script>
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default {
+    name: 'App',
+    setup() {
+        const router = useRouter();
+/*
+        onMounted(() => {
+            router.push('/');
+        });
+        */
+    }
+};
+</script>

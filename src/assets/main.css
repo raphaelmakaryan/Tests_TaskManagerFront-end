@@ -6,3 +6,19 @@
     padding: 2rem;
     font-weight: normal;
 }
+
+.task {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2vh;
+}
+
+.titleTask {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2vh;
+}

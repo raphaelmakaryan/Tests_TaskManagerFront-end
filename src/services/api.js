@@ -17,4 +17,20 @@ export const api = {
     getHello() {
         return apiClient.get(`/hello`)
     },
+
+    getTasks() {
+        return apiClient.get(``)
+    },
+
+    postTask(description) {
+        return apiClient.post(``, null, { params: { description } })
+    },
+
+    putTask(uniqueId) {
+        return apiClient.put(`${uniqueId}/complete`)
+    },
+
+    deleteTask(uniqueId) {
+        return apiClient.delete(`/${uniqueId}`)
+    }
 }
