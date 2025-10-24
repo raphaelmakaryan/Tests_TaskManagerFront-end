@@ -1,0 +1,9 @@
+name: Automatisation
+on: [push]
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Check le repo
+        uses: actions/checkout@v5
+        
