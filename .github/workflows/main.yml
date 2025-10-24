@@ -15,4 +15,4 @@ jobs:
       - name: Création du build
         run: npm run build --if-present
       - name: Lancement des test
-        run: npm test:e2e
+        run: npm run test:e2e
