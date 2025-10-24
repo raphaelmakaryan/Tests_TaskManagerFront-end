@@ -7,7 +7,8 @@
                 <form @submit.prevent="forAddTask">
                     <div class="col-12 my-2">
                         <label for="inputDescription" class="form-label">Description de la task</label>
-                        <input type="text" class="form-control" id="inputDescription" v-model="description" required>
+                        <input type="text" class="form-control" id="inputDescription" v-model="description" required
+                            aria-label="inputDescription">
                     </div>
                     <div class="col-12 my-2">
                         <button type="submit" class="btn btn-primary">Ajouter</button>

@@ -28,7 +28,6 @@ async function completeTask(id) {
     }
 }
 
-
 async function deleteTask(id) {
     try {
         const fetchInsert = await api.deleteTask(id)
@@ -50,37 +49,36 @@ async function loadTasks() {
         console.error('Erreur lors du chargement des tâches:', error)
     }
 }
-
-
 </script>
 
 <template>
-    <p>{{ title }}</p>
+    <h1>Task Manager</h1>
+    <p aria-label="titleHello">{{ title }}</p>
 
-    <a href="/addTask">
-        <button style="margin-top: 2vh; margin-bottom: 2vh;">Ajouter une tache</button>
+    <a href="/addTasks">
+        <button class="btn btn-primary my-2">Ajouter une tache</button>
     </a>
 
     <div class="allTasks">
         <div v-if="allTasks" v-for="task in allTasks">
-            <div class="task">
-                <div class="titleTask">
-                    <p> ID : </p>
-                    <p>{{ task.uniqueId }}</p>
+            <div class="taskItem">
+                <div class="titleTask forId">
+                    <p class="forIdTitle"> ID : </p>
+                    <p class="forIdValue">{{ task.uniqueId }}</p>
+                </div>
+                <div class="titleTask forState">
+                    <p class="forStateTitle"> Etat : </p>
+                    <p class="forStateValue">{{ task.state }}</p>
+                </div>
+                <div class="titleTask forDesc">
+                    <p class="forDescTitle"> Description : </p>
+                    <p class="forDescValue">{{ task.description }}</p>
                 </div>
                 <div class="titleTask">
-                    <p> Etat : </p>
-                    <p>{{ task.state }}</p>
+                    <button type="button" class="btn btn-success" @click="completeTask(task.uniqueId)">Completer</button>
                 </div>
                 <div class="titleTask">
-                    <p> Description : </p>
-                    <p>{{ task.description }}</p>
-                </div>
-                <div class="titleTask">
-                    <button type="button" @click="completeTask(task.uniqueId)">Completer</button>
-                </div>
-                <div class="titleTask">
-                    <button type="button" @click="deleteTask(task.uniqueId)">Supprimer</button>
+                    <button type="button"  class="btn btn-danger" @click="deleteTask(task.uniqueId)">Supprimer</button>
                 </div>
             </div>
         </div>

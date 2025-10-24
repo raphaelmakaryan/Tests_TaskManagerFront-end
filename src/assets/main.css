@@ -7,7 +7,7 @@
     font-weight: normal;
 }
 
-.task {
+.taskItem {
     display: flex;
     align-items: center;
     flex-direction: row;
