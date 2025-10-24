@@ -30,10 +30,15 @@ test('complete a task', async ({ page }) => {
   await page.goto('/');
   const firstTask = page.locator('.taskItem').first();
   const stateLocator = firstTask.locator('.forStateValue');
+  const beforeState = stateLocator;
+
   const firstTaskCompleteButton = firstTask.getByRole('button', { name: 'Completer' });
   await firstTaskCompleteButton.click();
+
+  const afterState = stateLocator;
   await expect(stateLocator).toHaveText("terminé", { timeout: 3000 });
-  expect(await stateLocator.textContent()).toBe(await stateLocator.textContent());
+  
+  expect(await beforeState.textContent()).toBe(await afterState.textContent());
 })
 
 test('delete a task', async ({ page }) => {
