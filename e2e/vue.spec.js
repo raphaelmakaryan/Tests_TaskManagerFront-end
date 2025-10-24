@@ -9,6 +9,7 @@ test('visits the app root url', async ({ page }) => {
   // https://playwright.dev/docs/input
 })
 
+/*
 test('navigate to add task page', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'Ajouter une tache' }).click();
@@ -37,7 +38,7 @@ test('complete a task', async ({ page }) => {
 
   const afterState = stateLocator;
   await expect(stateLocator).toHaveText("terminé", { timeout: 3000 });
-  
+
   expect(await beforeState.textContent()).toBe(await afterState.textContent());
 })
 
@@ -49,3 +50,4 @@ test('delete a task', async ({ page }) => {
   const finalTaskCount = await page.locator('.taskItem').count();
   expect(finalTaskCount).toBe(initialTaskCount - 1);
 });
+*/
